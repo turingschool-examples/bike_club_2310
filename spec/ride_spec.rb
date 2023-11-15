@@ -22,9 +22,18 @@ RSpec.describe Ride do
   end
   
   describe "#loop?" do 
-    it " can indicate if the ride is a loop or not" do 
+    it "can indicate if the ride is a loop or not" do 
+      
       expect(@ride1.loop?).to be(false)
       expect(@ride2.loop?).to be(true)
+    end
+  end
+
+  describe "#total_distance" do 
+    it "can calculate distance" do 
+    
+    expect(@ride1.total_distance).to eq(21.4)
+    expect(@ride2.total_distance).to eq(14.9)
     end
   end
 end
