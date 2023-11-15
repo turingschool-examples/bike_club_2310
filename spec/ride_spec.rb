@@ -9,13 +9,21 @@ RSpec.describe Ride do
 
   describe "#initialize" do 
     it "exists" do 
+
       expect(@ride1).to be_a(Ride)
     end
 
     it "has readable attributes" do 
+      
       expect(@ride1.name).to eq("Walnut Creek Trail")
       expect(@ride1.distance).to eq(10.7)
       expect(@ride1.terrain).to eq(:hills)
+    end
+  end
+  
+  describe "#loop?" do 
+    it " can indicate if the ride is a loop or not" do 
+      expect(@ride1.loop?).to be(false)
     end
   end
 end
