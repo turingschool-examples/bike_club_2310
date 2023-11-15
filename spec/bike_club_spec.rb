@@ -27,4 +27,27 @@ RSpec.describe BikeClub do
       expect(@bike_club.bikers).to eq([@biker])
     end
   end  
+
+  describe "#most_rides" do
+    it "can tell us which Biker has logged the most rides" do
+      @bike_club.add_biker(@biker)
+      @bike_club.add_biker(@biker2)
+
+      @biker.learn_terrain!(:gravel)
+      @biker.learn_terrain!(:hills)
+
+      @biker.log_ride(@ride1, 92.5)
+      @biker.log_ride(@ride1, 91.1)
+      @biker.log_ride(@ride2, 60.9)
+      @biker.log_ride(@ride2, 61.6)
+
+      @biker2.learn_terrain!(:gravel)
+      @biker2.learn_terrain!(:hills)
+
+      @biker2.log_ride(@ride1, 95.0)
+      @biker2.log_ride(@ride2, 65.0)
+
+      expect(@bike_club.most_rides).to eq(@biker)
+    end
+  end
 end

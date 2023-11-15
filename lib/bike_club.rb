@@ -11,4 +11,9 @@ class BikeClub
     @bikers << biker
   end
 
+  def most_rides
+    @bikers.max_by do |biker|
+      biker.total_logged_rides
+    end
+  end
 end
