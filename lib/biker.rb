@@ -36,4 +36,12 @@ class Biker
       false
     end
   end
+
+  def total_logged_rides 
+    total = 0
+    @rides.each do |ride, time|
+      total += @rides[ride].count
+    end
+    total
+  end
 end
