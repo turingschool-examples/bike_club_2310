@@ -24,4 +24,16 @@ class Biker
       false
     end
   end
+
+  #A Biker can report its personal record for a specific ride. 
+  #This is the lowest time recorded for a ride. 
+  #This method will return false if the Biker hasn't completed the ride
+  
+  def personal_record(ride)
+    if @rides[ride]
+      @rides[ride].min
+    else
+      false
+    end
+  end
 end
