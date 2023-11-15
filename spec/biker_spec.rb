@@ -58,5 +58,14 @@ RSpec.describe Biker do
       expect(@biker.personal_record(@ride1)).to eq(91.1)
       expect(@biker.personal_record(@ride2)).to eq(60.9)
     end
+
+    it "will return a false personal record if the biker has not completed the ride" do
+      @biker2.log_ride(@ride1, 97.0)
+      @biker2.log_ride(@ride2, 67.0) 
+  
+      expect(@biker2.rides).to eq({})
+      expect(@biker2.personal_record(@ride1)).to eq(false)
+      expect(@biker2.personal_record(@ride2)).to eq(false)
+    end
   end
 end
