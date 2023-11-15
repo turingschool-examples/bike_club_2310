@@ -68,7 +68,7 @@ RSpec.describe Biker do
       expect(@biker2.personal_record(@ride2)).to eq(false)
     end
 
-    it "can log personal record if ride is completed and requirements are met" do
+    it "can log biker's personal record if requirements are met and not met" do
       @biker2.learn_terrain!(:gravel)
       @biker2.learn_terrain!(:hills)
   
