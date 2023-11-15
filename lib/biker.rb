@@ -14,4 +14,14 @@ class Biker
   def learn_terrain!(terrain)
     @acceptable_terrain << terrain
   end
+
+  def log_ride(ride, time)
+    if @acceptable_terrain.include?(ride.terrain) && @rides[ride] && ride.total_distance <= @max_distance
+      @rides[ride] << time
+    elsif @acceptable_terrain.include?(ride.terrain) && ride.total_distance <= @max_distance
+      @rides[ride] = [time]
+    else
+      false
+    end
+  end
 end
